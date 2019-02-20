@@ -5,17 +5,16 @@
 FROM alpine:3.9
 
 RUN apk --no-cache add \
-    nodejs \
-    npm \
-    ffmpeg \
-  && npm install -g \
-    npm@latest \
-    nightwatch@'<1.1' \
-    nightwatch-video-recorder@^3.0.0 \
-  # Clean up obsolete files:
-  && rm -rf \
-    /tmp/* \
-    /root/.npm
+        nodejs \
+        npm \
+        ffmpeg \
+        && npm install -g \
+        npm@latest \
+        nightwatch@latest \
+        # Clean up obsolete files:
+        && rm -rf \
+        /tmp/* \
+        /root/.npm
 
 # Set NODE_PATH to be able to require globally installed packages:
 ENV NODE_PATH=/usr/lib/node_modules
