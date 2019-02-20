@@ -29,9 +29,8 @@ function deploy(){
   if [[ "$1" ]]; then
     login
     build
-    image_id=$(docker images | grep 'tidal/nightwatch\s*v1' | awk '{print $3}')
-    docker tag $image_id 535558409775.dkr.ecr.ca-central-1.amazonaws.com/tidal/nightwatch:$1
-    docker push 535558409775.dkr.ecr.ca-central-1.amazonaws.com/tidal/nightwatch:$1
+    docker tag tidal/nightwatch:$1 535558409775.dkr.ecr.ca-central-1.amazonaws.com/nightwatch:$1
+    docker push 535558409775.dkr.ecr.ca-central-1.amazonaws.com/nightwatch:$1
   else
     echo "Need to specify version tag such as vX where X is any number."
   fi
