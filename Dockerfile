@@ -29,4 +29,6 @@ WORKDIR /home/nightwatch
 
 COPY wait-for.sh /usr/local/bin/wait-for
 
+RUN mkdir /tmp/screenshots
+
 ENTRYPOINT ["wait-for", "--", "nightwatch"]
