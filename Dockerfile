@@ -9,7 +9,6 @@ RUN apk --no-cache add \
         npm \
         ffmpeg \
         && npm install -g \
-        npm@latest \
         nightwatch@latest \
         # Clean up obsolete files:
         && rm -rf \
